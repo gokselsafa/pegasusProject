@@ -6,7 +6,7 @@ using System.Text;
 using System.Threading.Tasks;
 
 namespace pegasusProject.Classes
-{
+{//safa cw yi seviyor
     class ConceptWave
     {
         Connect connect = new Connect();
