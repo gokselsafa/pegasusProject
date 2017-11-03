@@ -18,7 +18,7 @@ namespace pegasusProject
         public TMS(bool ortamBilgisi) {
            
             connect1.ConOpen(ortamBilgisi, "TMS");
-            
+            //asdasd
         }
         public List<DataDTO> setDataType(string kurumsal_Bireysel, int cbUrunSI, int cbAltUrunSI)
         {
