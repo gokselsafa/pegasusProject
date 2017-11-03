@@ -6,9 +6,9 @@ using System.Text;
 using System.Threading.Tasks;
 
 namespace pegasusProject.Classes
-{//safa cw yi seviyor
+{
     class ConceptWave
-    {//kıyhkgkjgjkg
+    {
         Connect connect = new Connect();
         
         public ConceptWave(bool ortamBilgisi)
