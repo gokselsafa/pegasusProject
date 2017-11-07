@@ -55,7 +55,9 @@
             this.rbBAU = new MaterialSkin.Controls.MaterialRadioButton();
             this.rbUAT = new MaterialSkin.Controls.MaterialRadioButton();
             this.btnGetir = new MaterialSkin.Controls.MaterialFlatButton();
-            this.label1 = new System.Windows.Forms.Label();
+            this.rbSoho = new MaterialSkin.Controls.MaterialRadioButton();
+            this.rbToptan = new MaterialSkin.Controls.MaterialRadioButton();
+            this.labelBekle = new System.Windows.Forms.Label();
             this.matTabTMS.SuspendLayout();
             this.tabPage1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
@@ -86,7 +88,6 @@
             // 
             // tabPage1
             // 
-            this.tabPage1.Controls.Add(this.label1);
             this.tabPage1.Controls.Add(this.cbAltUrun);
             this.tabPage1.Controls.Add(this.dataGridView1);
             this.tabPage1.Controls.Add(this.cbUrun);
@@ -180,9 +181,9 @@
             // 
             this.cbKurumXDSL.FormattingEnabled = true;
             this.cbKurumXDSL.Items.AddRange(new object[] {
-            "VODAFONE VAE",
+            "TTNET",
             "TURK TELEKOM",
-            "TTNET"});
+            "VODAFONE VAE"});
             this.cbKurumXDSL.Location = new System.Drawing.Point(35, 69);
             this.cbKurumXDSL.Name = "cbKurumXDSL";
             this.cbKurumXDSL.Size = new System.Drawing.Size(121, 21);
@@ -204,7 +205,15 @@
             this.cbXDSL.FormattingEnabled = true;
             this.cbXDSL.Items.AddRange(new object[] {
             "ADSL",
-            "NDSL"});
+            "NDSL",
+            "VDSL",
+            "NVDSL",
+            "GSHDSL",
+            "GSHDSL YALIN",
+            "FTTX",
+            "NN ADSL",
+            "NN GHSDSL",
+            "NN GSHDSL(İKİ UÇ)"});
             this.cbXDSL.Location = new System.Drawing.Point(35, 32);
             this.cbXDSL.Name = "cbXDSL";
             this.cbXDSL.Size = new System.Drawing.Size(121, 21);
@@ -312,6 +321,8 @@
             // 
             // tabPage5
             // 
+            this.tabPage5.Controls.Add(this.rbToptan);
+            this.tabPage5.Controls.Add(this.rbSoho);
             this.tabPage5.Controls.Add(this.dGridSiebel);
             this.tabPage5.Controls.Add(this.rbKurumsalSiebel);
             this.tabPage5.Controls.Add(this.rbBireyselSiebel);
@@ -337,7 +348,7 @@
             this.rbKurumsalSiebel.AutoSize = true;
             this.rbKurumsalSiebel.Depth = 0;
             this.rbKurumsalSiebel.Font = new System.Drawing.Font("Roboto", 10F);
-            this.rbKurumsalSiebel.Location = new System.Drawing.Point(19, 71);
+            this.rbKurumsalSiebel.Location = new System.Drawing.Point(19, 43);
             this.rbKurumsalSiebel.Margin = new System.Windows.Forms.Padding(0);
             this.rbKurumsalSiebel.MouseLocation = new System.Drawing.Point(-1, -1);
             this.rbKurumsalSiebel.MouseState = MaterialSkin.MouseState.HOVER;
@@ -356,7 +367,7 @@
             this.rbBireyselSiebel.Checked = true;
             this.rbBireyselSiebel.Depth = 0;
             this.rbBireyselSiebel.Font = new System.Drawing.Font("Roboto", 10F);
-            this.rbBireyselSiebel.Location = new System.Drawing.Point(19, 29);
+            this.rbBireyselSiebel.Location = new System.Drawing.Point(19, 13);
             this.rbBireyselSiebel.Margin = new System.Windows.Forms.Padding(0);
             this.rbBireyselSiebel.MouseLocation = new System.Drawing.Point(-1, -1);
             this.rbBireyselSiebel.MouseState = MaterialSkin.MouseState.HOVER;
@@ -437,27 +448,67 @@
             this.btnGetir.UseVisualStyleBackColor = false;
             this.btnGetir.Click += new System.EventHandler(this.btnGetir_Click);
             // 
-            // label1
+            // rbSoho
             // 
-            this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(148, 110);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(47, 13);
-            this.label1.TabIndex = 5;
-            this.label1.Text = "asdasda";
+            this.rbSoho.AutoSize = true;
+            this.rbSoho.Depth = 0;
+            this.rbSoho.Font = new System.Drawing.Font("Roboto", 10F);
+            this.rbSoho.Location = new System.Drawing.Point(19, 73);
+            this.rbSoho.Margin = new System.Windows.Forms.Padding(0);
+            this.rbSoho.MouseLocation = new System.Drawing.Point(-1, -1);
+            this.rbSoho.MouseState = MaterialSkin.MouseState.HOVER;
+            this.rbSoho.Name = "rbSoho";
+            this.rbSoho.Ripple = true;
+            this.rbSoho.Size = new System.Drawing.Size(60, 30);
+            this.rbSoho.TabIndex = 3;
+            this.rbSoho.TabStop = true;
+            this.rbSoho.Text = "Soho";
+            this.rbSoho.UseVisualStyleBackColor = true;
+            this.rbSoho.CheckedChanged += new System.EventHandler(this.rbSoho_CheckedChanged);
+            // 
+            // rbToptan
+            // 
+            this.rbToptan.AutoSize = true;
+            this.rbToptan.Depth = 0;
+            this.rbToptan.Font = new System.Drawing.Font("Roboto", 10F);
+            this.rbToptan.Location = new System.Drawing.Point(19, 103);
+            this.rbToptan.Margin = new System.Windows.Forms.Padding(0);
+            this.rbToptan.MouseLocation = new System.Drawing.Point(-1, -1);
+            this.rbToptan.MouseState = MaterialSkin.MouseState.HOVER;
+            this.rbToptan.Name = "rbToptan";
+            this.rbToptan.Ripple = true;
+            this.rbToptan.Size = new System.Drawing.Size(72, 30);
+            this.rbToptan.TabIndex = 4;
+            this.rbToptan.TabStop = true;
+            this.rbToptan.Text = "Toptan";
+            this.rbToptan.UseVisualStyleBackColor = true;
+            this.rbToptan.CheckedChanged += new System.EventHandler(this.rbToptan_CheckedChanged);
+            // 
+            // labelBekle
+            // 
+            this.labelBekle.AutoSize = true;
+            this.labelBekle.BackColor = System.Drawing.Color.Black;
+            this.labelBekle.Location = new System.Drawing.Point(251, 9);
+            this.labelBekle.Name = "labelBekle";
+            this.labelBekle.Size = new System.Drawing.Size(123, 13);
+            this.labelBekle.TabIndex = 5;
+            this.labelBekle.Text = "LÜTFEN BEKLEYİNİZ...";
+            this.labelBekle.Visible = false;
             // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.ClientSize = new System.Drawing.Size(691, 308);
+            this.ClientSize = new System.Drawing.Size(691, 311);
+            this.Controls.Add(this.labelBekle);
             this.Controls.Add(this.btnGetir);
             this.Controls.Add(this.rbUAT);
             this.Controls.Add(this.rbBAU);
             this.Controls.Add(this.materialTabSelector1);
             this.Controls.Add(this.matTabTMS);
             this.Name = "Form1";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Data Finder";
             this.Load += new System.EventHandler(this.Form1_Load);
             this.matTabTMS.ResumeLayout(false);
@@ -508,7 +559,9 @@
         private MaterialSkin.Controls.MaterialRadioButton rbBireyselSiebel;
         private System.Windows.Forms.ComboBox cbKurumXDSL;
         private System.Windows.Forms.ComboBox cbAltUrun;
-        private System.Windows.Forms.Label label1;
+        private MaterialSkin.Controls.MaterialRadioButton rbToptan;
+        private MaterialSkin.Controls.MaterialRadioButton rbSoho;
+        private System.Windows.Forms.Label labelBekle;
     }
 }
 

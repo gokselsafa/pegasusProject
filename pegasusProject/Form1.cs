@@ -35,8 +35,12 @@ namespace pegasusProject
 
         private void btnGetir_Click(object sender, EventArgs e)
         {
-            var source = new BindingSource();
+            labelBekle.Font = new Font("Arial", 15, FontStyle.Bold);
 
+            this.Enabled = false;
+            labelBekle.Visible = true;
+            var source = new BindingSource();
+            
             switch (matTabTMS.SelectedIndex)
             {
                 case 0:{
@@ -132,11 +136,13 @@ namespace pegasusProject
                     //dataGridView1.Columns[].Visible = false;
                 }
             }
+            labelBekle.Visible = false;
+            this.Enabled = true;
         }
 
         
         private void Form1_Load(object sender, EventArgs e)
-        {
+        { 
             foreach (var item in cbItemTMS.bireysel)
                 cbUrun.Items.Add(item);
         }
@@ -251,6 +257,16 @@ namespace pegasusProject
         private void materialTabSelector1_Click(object sender, EventArgs e)
         {
 
+        }
+
+        private void rbSoho_CheckedChanged(object sender, EventArgs e)
+        {
+            bireyselKurumsalSiebel = "SOHO";
+        }
+
+        private void rbToptan_CheckedChanged(object sender, EventArgs e)
+        {
+            bireyselKurumsalSiebel = "TOPTAN";
         }
     }
 }
