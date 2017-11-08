@@ -23,6 +23,9 @@ namespace pegasusProject
         private string conStringSiebelUAT = "Provider=MSDAORA;Data Source=10.233.168.2:1521/SBUAT01;Persist Security Info=True;User ID=SGOKSEL;Password=Safa_1256";
         private string conStringSiebelBAU = "Provider=MSDAORA;Data Source=10.233.168.4:1521/SBITAM01;Persist Security Info=True;User ID=SGOKSEL;Password=Safa_1256";
 
+        private string conStringTelauraUAT = "Provider=MSDAORA;Data Source=10.6.148.209:1521/TELRAUAT;Persist Security Info=True;User ID=UATIK;Password=UGURCAN_9168";
+        private string conStringTelauraBAU = "Provider=MSDAORA;Data Source=10.6.148.209:1521/TELRABAU;Persist Security Info=True;User ID=UATIK;Password=Ugurcan_9168";
+
         public OleDbConnection conn;
         public OleDbCommand cmd;
 
@@ -49,14 +52,14 @@ namespace pegasusProject
                             conn = new OleDbConnection(conStringXdslBAU);
                     }
                     break;
-                case "CW":
+                case "TELAURA":
                     {
                         if (uatMi == true)
                         {
-                            conn = new OleDbConnection(conStringCWUAT);
+                            conn = new OleDbConnection(conStringTelauraUAT);
                         }
                         else
-                            conn = new OleDbConnection(conStringCWBAU);
+                            conn = new OleDbConnection(conStringTelauraBAU);
                     }break;
                  case "TAHAKUK":
                     {

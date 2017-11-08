@@ -19,6 +19,7 @@ namespace pegasusProject
         public string bireyselKurumsalTMS="G";
         public string bireyselKurumsalTahakkuk = "G";
         public string bireyselKurumsalSiebel = "G";
+        public string bireyselKurumsalTelaura = "B";
         bool uatMi = false;
 
         ComboBoxItemItemsTMS cbItemTMS = new ComboBoxItemItemsTMS();
@@ -35,35 +36,48 @@ namespace pegasusProject
 
         private void btnGetir_Click(object sender, EventArgs e)
         {
-            labelBekle.Font = new Font("Arial", 15, FontStyle.Bold);
-
-            this.Enabled = false;
-            labelBekle.Visible = true;
+            kapat();
+            labelBekle.Visible = false;
             var source = new BindingSource();
             
             switch (matTabTMS.SelectedIndex)
             {
-                case 0:{
+                case 0:{//TMS
                         if (cbUrun.SelectedIndex >= 0 && cbAltUrun.SelectedIndex >= 0)
                         {
                                 TMS tms = new TMS(uatMi);
                             source.DataSource = tms.setDataType(bireyselKurumsalTMS, cbUrun.SelectedIndex, cbAltUrun.SelectedIndex);
                             dataGridView1.DataSource = source;
-
-                            #region
-                            /*foreach (DataGridViewRow item in dataGridView1.Columns)
+                            int[,] array = new int[dataGridView1.Rows.Count,dataGridView1.Columns.Count];
+                            int count = 0;
+                            foreach (DataGridViewRow item in dataGridView1.Rows)
                             {
-                                var isNull = item;
-                                
-                                for(int i=0;i<item;i++)
+                                for(int i=0;i<dataGridView1.Columns.Count;i++)
                                 {
-                                    if(item.Cells[i] != null)
+                                    if(item.Cells[i].Value == null)
                                     {
-                                        isNull 
-                                    }*
-                                }*/
-#endregion
-
+                                        array[count,i] = 0;
+                                    }
+                                    else
+                                    {
+                                        array[count, i] = 1;
+                                    }
+                                }
+                                count++;
+                            }
+                            for (int i = 0; i < dataGridView1.Columns.Count; i++)
+                            {
+                                bool isNull = true;
+                                for (int j = 0; j < dataGridView1.Rows.Count; j++)
+                                {
+                                    if( array[j,i] == 1)
+                                    {
+                                        isNull = false;
+                                    }
+                                }
+                                if(isNull == true)
+                                    dataGridView1.Columns[i].Visible = false;
+                            }
                         }
                         else
                         {
@@ -72,12 +86,42 @@ namespace pegasusProject
                     }
                     break;
                 case 1:
-                    {
+                    {//xdsl
                         if (cbXDSL.SelectedIndex >= 0 && cbKurumXDSL.SelectedIndex >= 0)
                         {
                             xDSL xDSL = new xDSL(uatMi);
                             source.DataSource = xDSL.setDataTip(cbKurumXDSL.Text, cbXDSL.Text);
                             dGridXDSL.DataSource = source;
+                            int[,] array = new int[dGridXDSL.Rows.Count, dGridXDSL.Columns.Count];
+                            int count = 0;
+                            foreach (DataGridViewRow item in dGridXDSL.Rows)
+                            {
+                                for (int i = 0; i < dGridXDSL.Columns.Count; i++)
+                                {
+                                    if (item.Cells[i].Value == null)
+                                    {
+                                        array[count, i] = 0;
+                                    }
+                                    else
+                                    {
+                                        array[count, i] = 1;
+                                    }
+                                }
+                                count++;
+                            }
+                            for (int i = 0; i < dGridXDSL.Columns.Count; i++)
+                            {
+                                bool isNull = true;
+                                for (int j = 0; j < dGridXDSL.Rows.Count; j++)
+                                {
+                                    if (array[j, i] == 1)
+                                    {
+                                        isNull = false;
+                                    }
+                                }
+                                if (isNull == true)
+                                    dGridXDSL.Columns[i].Visible = false;
+                            }
                         }
                         else
                         {
@@ -85,48 +129,125 @@ namespace pegasusProject
                         }
                     }break;
                 case 2:
-                    {
+                    {//tahakkuk
                         if (cbUrunTahakkuk.SelectedIndex >= 0)
                         {
                             Tahakkuk tahakuk = new Tahakkuk(uatMi);
                             source.DataSource = tahakuk.setDataTip(bireyselKurumsalTahakkuk, cbUrunTahakkuk.SelectedIndex);
                             dGridTahakuk.DataSource = source;
+                            int[,] array = new int[dGridTahakuk.Rows.Count, dGridTahakuk.Columns.Count];
+                            int count = 0;
+                            foreach (DataGridViewRow item in dGridTahakuk.Rows)
+                            {
+                                for (int i = 0; i < dGridTahakuk.Columns.Count; i++)
+                                {
+                                    if (item.Cells[i].Value == null)
+                                    {
+                                        array[count, i] = 0;
+                                    }
+                                    else
+                                    {
+                                        array[count, i] = 1;
+                                    }
+                                }
+                                count++;
+                            }
+                            for (int i = 0; i < dGridTahakuk.Columns.Count; i++)
+                            {
+                                bool isNull = true;
+                                for (int j = 0; j < dGridTahakuk.Rows.Count; j++)
+                                {
+                                    if (array[j, i] == 1)
+                                    {
+                                        isNull = false;
+                                    }
+                                }
+                                if (isNull == true)
+                                    dGridTahakuk.Columns[i].Visible = false;
+                            }
                         }
                         else
                         {
                             MessageBox.Show("Tüm Alanların Seçilmesi zorunludur.", "Uyarı");
                         }
-                        
                     }
                     break;
                 case 3:
-                    {
-                        if (cbUrunCW.SelectedIndex >= 0)
-                        {
-                            ConceptWave cW = new ConceptWave(uatMi);
-                            source.DataSource = cW.setDataTip();
-                            dGridCW.DataSource = source;
-                        }
-                        else
-                        {
-                            MessageBox.Show("Tüm Alanların Seçilmesi zorunludur.", "Uyarı");
-                        }
+                    {//telaura
+                            Telaura telAura = new Telaura(uatMi);
+                            source.DataSource = telAura.setDataTip(bireyselKurumsalTelaura);
+                            dGridTelaura.DataSource = source;
+                            int[,] array = new int[dGridTelaura.Rows.Count, dGridTelaura.Columns.Count];
+                            int count = 0;
+                            foreach (DataGridViewRow item in dGridTelaura.Rows)
+                            {
+                                for (int i = 0; i < dGridTelaura.Columns.Count; i++)
+                                {
+                                    if (item.Cells[i].Value == null)
+                                    {
+                                        array[count, i] = 0;
+                                    }
+                                    else
+                                    {
+                                        array[count, i] = 1;
+                                    }
+                                }
+                                count++;
+                            }
+                            for (int i = 0; i < dGridTelaura.Columns.Count; i++)
+                            {
+                                bool isNull = true;
+                                for (int j = 0; j < dGridTelaura.Rows.Count; j++)
+                                {
+                                    if (array[j, i] == 1)
+                                    {
+                                        isNull = false;
+                                    }
+                                }
+                                if (isNull == true)
+                                    dGridTelaura.Columns[i].Visible = false;
+                            }
                     }
                     break;
                 case 4:
-                    {
+                    {//siebel
                             Siebel siebel = new Siebel(uatMi);
                             source.DataSource = siebel.setDataTip(bireyselKurumsalSiebel);
                             dGridSiebel.DataSource = source;
-                    }break;
+                        int[,] array = new int[dGridSiebel.Rows.Count, dGridSiebel.Columns.Count];
+                        int count = 0;
+                        foreach (DataGridViewRow item in dGridSiebel.Rows)
+                        {
+                            for (int i = 0; i < dGridSiebel.Columns.Count; i++)
+                            {
+                                if (item.Cells[i].Value == null)
+                                {
+                                    array[count, i] = 0;
+                                }
+                                else
+                                {
+                                    array[count, i] = 1;
+                                }
+                            }
+                            count++;
+                        }
+                        for (int i = 0; i < dGridSiebel.Columns.Count; i++)
+                        {
+                            bool isNull = true;
+                            for (int j = 0; j < dGridSiebel.Rows.Count; j++)
+                            {
+                                if (array[j, i] == 1)
+                                {
+                                    isNull = false;
+                                }
+                            }
+                            if (isNull == true)
+                                dGridSiebel.Columns[i].Visible = false;
+                        }
+                    }
+                    break;
 
             }
-
-            
-
-
-
-
             foreach (var items in dataGridView1.Columns)
             {
                 bool notAvailable = true;
@@ -136,13 +257,22 @@ namespace pegasusProject
                     //dataGridView1.Columns[].Visible = false;
                 }
             }
-            labelBekle.Visible = false;
+           
             this.Enabled = true;
         }
 
+        private void ac()
+        {
+            labelBekle.Show();
+        }
+        private void kapat()
+        {
+            labelBekle.Hide();
+        }
         
         private void Form1_Load(object sender, EventArgs e)
-        { 
+        {
+            labelBekle.Font = new Font("Arial", 15, FontStyle.Bold);
             foreach (var item in cbItemTMS.bireysel)
                 cbUrun.Items.Add(item);
         }
@@ -267,6 +397,16 @@ namespace pegasusProject
         private void rbToptan_CheckedChanged(object sender, EventArgs e)
         {
             bireyselKurumsalSiebel = "TOPTAN";
+        }
+
+        private void rbBireyselTelaura_CheckedChanged(object sender, EventArgs e)
+        {
+            bireyselKurumsalTelaura = "B";
+        }
+
+        private void rbKurumsalTelaura_CheckedChanged(object sender, EventArgs e)
+        {
+            bireyselKurumsalTelaura = "K";
         }
     }
 }

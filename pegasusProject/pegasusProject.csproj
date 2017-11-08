@@ -80,8 +80,8 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Classes\ConceptWave.cs" />
-    <Compile Include="Classes\CW_DataDTO.cs" />
+    <Compile Include="Classes\Telaura.cs" />
+    <Compile Include="Classes\TelauraDTO.cs" />
     <Compile Include="Classes\DataDTO.cs" />
     <Compile Include="Classes\DataTipi.cs" />
     <Compile Include="Classes\ComboBoxItemItems.cs" />

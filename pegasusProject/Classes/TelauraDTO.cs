@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace pegasusProject.Classes
 {
-    class CW_DataDTO
+    class TelauraDTO
     {
         public string hizmetNO { get; set; }
     }
