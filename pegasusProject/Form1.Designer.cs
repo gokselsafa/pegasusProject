@@ -45,9 +45,10 @@
             this.dGridTahakuk = new System.Windows.Forms.DataGridView();
             this.cbUrunTahakkuk = new System.Windows.Forms.ComboBox();
             this.tabPage4 = new System.Windows.Forms.TabPage();
-            this.dGridCW = new System.Windows.Forms.DataGridView();
-            this.cbUrunCW = new System.Windows.Forms.ComboBox();
+            this.dGridTelaura = new System.Windows.Forms.DataGridView();
             this.tabPage5 = new System.Windows.Forms.TabPage();
+            this.rbToptan = new MaterialSkin.Controls.MaterialRadioButton();
+            this.rbSoho = new MaterialSkin.Controls.MaterialRadioButton();
             this.dGridSiebel = new System.Windows.Forms.DataGridView();
             this.rbKurumsalSiebel = new MaterialSkin.Controls.MaterialRadioButton();
             this.rbBireyselSiebel = new MaterialSkin.Controls.MaterialRadioButton();
@@ -55,7 +56,9 @@
             this.rbBAU = new MaterialSkin.Controls.MaterialRadioButton();
             this.rbUAT = new MaterialSkin.Controls.MaterialRadioButton();
             this.btnGetir = new MaterialSkin.Controls.MaterialFlatButton();
-            this.label1 = new System.Windows.Forms.Label();
+            this.labelBekle = new System.Windows.Forms.Label();
+            this.rbBireyselTelaura = new MaterialSkin.Controls.MaterialRadioButton();
+            this.rbKurumsalTelaura = new MaterialSkin.Controls.MaterialRadioButton();
             this.matTabTMS.SuspendLayout();
             this.tabPage1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
@@ -64,7 +67,7 @@
             this.tabPage3.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dGridTahakuk)).BeginInit();
             this.tabPage4.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dGridCW)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dGridTelaura)).BeginInit();
             this.tabPage5.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dGridSiebel)).BeginInit();
             this.SuspendLayout();
@@ -86,7 +89,6 @@
             // 
             // tabPage1
             // 
-            this.tabPage1.Controls.Add(this.label1);
             this.tabPage1.Controls.Add(this.cbAltUrun);
             this.tabPage1.Controls.Add(this.dataGridView1);
             this.tabPage1.Controls.Add(this.cbUrun);
@@ -180,9 +182,9 @@
             // 
             this.cbKurumXDSL.FormattingEnabled = true;
             this.cbKurumXDSL.Items.AddRange(new object[] {
-            "VODAFONE VAE",
+            "TTNET",
             "TURK TELEKOM",
-            "TTNET"});
+            "VODAFONE VAE"});
             this.cbKurumXDSL.Location = new System.Drawing.Point(35, 69);
             this.cbKurumXDSL.Name = "cbKurumXDSL";
             this.cbKurumXDSL.Size = new System.Drawing.Size(121, 21);
@@ -204,7 +206,15 @@
             this.cbXDSL.FormattingEnabled = true;
             this.cbXDSL.Items.AddRange(new object[] {
             "ADSL",
-            "NDSL"});
+            "NDSL",
+            "VDSL",
+            "NVDSL",
+            "GSHDSL",
+            "GSHDSL YALIN",
+            "FTTX",
+            "NN ADSL",
+            "NN GHSDSL",
+            "NN GSHDSL(İKİ UÇ)"});
             this.cbXDSL.Location = new System.Drawing.Point(35, 32);
             this.cbXDSL.Name = "cbXDSL";
             this.cbXDSL.Size = new System.Drawing.Size(121, 21);
@@ -281,37 +291,30 @@
             // 
             // tabPage4
             // 
-            this.tabPage4.Controls.Add(this.dGridCW);
-            this.tabPage4.Controls.Add(this.cbUrunCW);
+            this.tabPage4.Controls.Add(this.rbKurumsalTelaura);
+            this.tabPage4.Controls.Add(this.rbBireyselTelaura);
+            this.tabPage4.Controls.Add(this.dGridTelaura);
             this.tabPage4.Location = new System.Drawing.Point(4, 22);
             this.tabPage4.Name = "tabPage4";
             this.tabPage4.Padding = new System.Windows.Forms.Padding(3);
             this.tabPage4.Size = new System.Drawing.Size(661, 222);
             this.tabPage4.TabIndex = 3;
-            this.tabPage4.Text = "ConceptWave";
+            this.tabPage4.Text = "Telaura";
             this.tabPage4.UseVisualStyleBackColor = true;
             // 
-            // dGridCW
+            // dGridTelaura
             // 
-            this.dGridCW.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
-            this.dGridCW.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dGridCW.Location = new System.Drawing.Point(257, 9);
-            this.dGridCW.Name = "dGridCW";
-            this.dGridCW.Size = new System.Drawing.Size(346, 129);
-            this.dGridCW.TabIndex = 1;
-            // 
-            // cbUrunCW
-            // 
-            this.cbUrunCW.FormattingEnabled = true;
-            this.cbUrunCW.Items.AddRange(new object[] {
-            "TTVPN"});
-            this.cbUrunCW.Location = new System.Drawing.Point(67, 25);
-            this.cbUrunCW.Name = "cbUrunCW";
-            this.cbUrunCW.Size = new System.Drawing.Size(174, 21);
-            this.cbUrunCW.TabIndex = 0;
+            this.dGridTelaura.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
+            this.dGridTelaura.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dGridTelaura.Location = new System.Drawing.Point(257, 9);
+            this.dGridTelaura.Name = "dGridTelaura";
+            this.dGridTelaura.Size = new System.Drawing.Size(346, 129);
+            this.dGridTelaura.TabIndex = 1;
             // 
             // tabPage5
             // 
+            this.tabPage5.Controls.Add(this.rbToptan);
+            this.tabPage5.Controls.Add(this.rbSoho);
             this.tabPage5.Controls.Add(this.dGridSiebel);
             this.tabPage5.Controls.Add(this.rbKurumsalSiebel);
             this.tabPage5.Controls.Add(this.rbBireyselSiebel);
@@ -322,6 +325,42 @@
             this.tabPage5.TabIndex = 4;
             this.tabPage5.Text = "Siebel";
             this.tabPage5.UseVisualStyleBackColor = true;
+            // 
+            // rbToptan
+            // 
+            this.rbToptan.AutoSize = true;
+            this.rbToptan.Depth = 0;
+            this.rbToptan.Font = new System.Drawing.Font("Roboto", 10F);
+            this.rbToptan.Location = new System.Drawing.Point(19, 103);
+            this.rbToptan.Margin = new System.Windows.Forms.Padding(0);
+            this.rbToptan.MouseLocation = new System.Drawing.Point(-1, -1);
+            this.rbToptan.MouseState = MaterialSkin.MouseState.HOVER;
+            this.rbToptan.Name = "rbToptan";
+            this.rbToptan.Ripple = true;
+            this.rbToptan.Size = new System.Drawing.Size(72, 30);
+            this.rbToptan.TabIndex = 4;
+            this.rbToptan.TabStop = true;
+            this.rbToptan.Text = "Toptan";
+            this.rbToptan.UseVisualStyleBackColor = true;
+            this.rbToptan.CheckedChanged += new System.EventHandler(this.rbToptan_CheckedChanged);
+            // 
+            // rbSoho
+            // 
+            this.rbSoho.AutoSize = true;
+            this.rbSoho.Depth = 0;
+            this.rbSoho.Font = new System.Drawing.Font("Roboto", 10F);
+            this.rbSoho.Location = new System.Drawing.Point(19, 73);
+            this.rbSoho.Margin = new System.Windows.Forms.Padding(0);
+            this.rbSoho.MouseLocation = new System.Drawing.Point(-1, -1);
+            this.rbSoho.MouseState = MaterialSkin.MouseState.HOVER;
+            this.rbSoho.Name = "rbSoho";
+            this.rbSoho.Ripple = true;
+            this.rbSoho.Size = new System.Drawing.Size(60, 30);
+            this.rbSoho.TabIndex = 3;
+            this.rbSoho.TabStop = true;
+            this.rbSoho.Text = "Soho";
+            this.rbSoho.UseVisualStyleBackColor = true;
+            this.rbSoho.CheckedChanged += new System.EventHandler(this.rbSoho_CheckedChanged);
             // 
             // dGridSiebel
             // 
@@ -337,7 +376,7 @@
             this.rbKurumsalSiebel.AutoSize = true;
             this.rbKurumsalSiebel.Depth = 0;
             this.rbKurumsalSiebel.Font = new System.Drawing.Font("Roboto", 10F);
-            this.rbKurumsalSiebel.Location = new System.Drawing.Point(19, 71);
+            this.rbKurumsalSiebel.Location = new System.Drawing.Point(19, 43);
             this.rbKurumsalSiebel.Margin = new System.Windows.Forms.Padding(0);
             this.rbKurumsalSiebel.MouseLocation = new System.Drawing.Point(-1, -1);
             this.rbKurumsalSiebel.MouseState = MaterialSkin.MouseState.HOVER;
@@ -356,7 +395,7 @@
             this.rbBireyselSiebel.Checked = true;
             this.rbBireyselSiebel.Depth = 0;
             this.rbBireyselSiebel.Font = new System.Drawing.Font("Roboto", 10F);
-            this.rbBireyselSiebel.Location = new System.Drawing.Point(19, 29);
+            this.rbBireyselSiebel.Location = new System.Drawing.Point(19, 13);
             this.rbBireyselSiebel.Margin = new System.Windows.Forms.Padding(0);
             this.rbBireyselSiebel.MouseLocation = new System.Drawing.Point(-1, -1);
             this.rbBireyselSiebel.MouseState = MaterialSkin.MouseState.HOVER;
@@ -437,27 +476,66 @@
             this.btnGetir.UseVisualStyleBackColor = false;
             this.btnGetir.Click += new System.EventHandler(this.btnGetir_Click);
             // 
-            // label1
+            // labelBekle
             // 
-            this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(148, 110);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(47, 13);
-            this.label1.TabIndex = 5;
-            this.label1.Text = "asdasda";
+            this.labelBekle.AutoSize = true;
+            this.labelBekle.BackColor = System.Drawing.Color.Black;
+            this.labelBekle.Location = new System.Drawing.Point(251, 9);
+            this.labelBekle.Name = "labelBekle";
+            this.labelBekle.Size = new System.Drawing.Size(123, 13);
+            this.labelBekle.TabIndex = 5;
+            this.labelBekle.Text = "LÜTFEN BEKLEYİNİZ...";
+            // 
+            // rbBireyselTelaura
+            // 
+            this.rbBireyselTelaura.AutoSize = true;
+            this.rbBireyselTelaura.Checked = true;
+            this.rbBireyselTelaura.Depth = 0;
+            this.rbBireyselTelaura.Font = new System.Drawing.Font("Roboto", 10F);
+            this.rbBireyselTelaura.Location = new System.Drawing.Point(39, 29);
+            this.rbBireyselTelaura.Margin = new System.Windows.Forms.Padding(0);
+            this.rbBireyselTelaura.MouseLocation = new System.Drawing.Point(-1, -1);
+            this.rbBireyselTelaura.MouseState = MaterialSkin.MouseState.HOVER;
+            this.rbBireyselTelaura.Name = "rbBireyselTelaura";
+            this.rbBireyselTelaura.Ripple = true;
+            this.rbBireyselTelaura.Size = new System.Drawing.Size(78, 30);
+            this.rbBireyselTelaura.TabIndex = 2;
+            this.rbBireyselTelaura.TabStop = true;
+            this.rbBireyselTelaura.Text = "Bireysel";
+            this.rbBireyselTelaura.UseVisualStyleBackColor = true;
+            this.rbBireyselTelaura.CheckedChanged += new System.EventHandler(this.rbBireyselTelaura_CheckedChanged);
+            // 
+            // rbKurumsalTelaura
+            // 
+            this.rbKurumsalTelaura.AutoSize = true;
+            this.rbKurumsalTelaura.Depth = 0;
+            this.rbKurumsalTelaura.Font = new System.Drawing.Font("Roboto", 10F);
+            this.rbKurumsalTelaura.Location = new System.Drawing.Point(39, 73);
+            this.rbKurumsalTelaura.Margin = new System.Windows.Forms.Padding(0);
+            this.rbKurumsalTelaura.MouseLocation = new System.Drawing.Point(-1, -1);
+            this.rbKurumsalTelaura.MouseState = MaterialSkin.MouseState.HOVER;
+            this.rbKurumsalTelaura.Name = "rbKurumsalTelaura";
+            this.rbKurumsalTelaura.Ripple = true;
+            this.rbKurumsalTelaura.Size = new System.Drawing.Size(88, 30);
+            this.rbKurumsalTelaura.TabIndex = 3;
+            this.rbKurumsalTelaura.Text = "Kurumsal";
+            this.rbKurumsalTelaura.UseVisualStyleBackColor = true;
+            this.rbKurumsalTelaura.CheckedChanged += new System.EventHandler(this.rbKurumsalTelaura_CheckedChanged);
             // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.ClientSize = new System.Drawing.Size(691, 308);
+            this.ClientSize = new System.Drawing.Size(691, 311);
+            this.Controls.Add(this.labelBekle);
             this.Controls.Add(this.btnGetir);
             this.Controls.Add(this.rbUAT);
             this.Controls.Add(this.rbBAU);
             this.Controls.Add(this.materialTabSelector1);
             this.Controls.Add(this.matTabTMS);
             this.Name = "Form1";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Data Finder";
             this.Load += new System.EventHandler(this.Form1_Load);
             this.matTabTMS.ResumeLayout(false);
@@ -470,7 +548,8 @@
             this.tabPage3.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dGridTahakuk)).EndInit();
             this.tabPage4.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.dGridCW)).EndInit();
+            this.tabPage4.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.dGridTelaura)).EndInit();
             this.tabPage5.ResumeLayout(false);
             this.tabPage5.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dGridSiebel)).EndInit();
@@ -497,8 +576,7 @@
         private MaterialSkin.Controls.MaterialFlatButton btnGetir;
         private System.Windows.Forms.DataGridView dGridXDSL;
         private System.Windows.Forms.ComboBox cbXDSL;
-        private System.Windows.Forms.ComboBox cbUrunCW;
-        private System.Windows.Forms.DataGridView dGridCW;
+        private System.Windows.Forms.DataGridView dGridTelaura;
         private System.Windows.Forms.ComboBox cbUrunTahakkuk;
         private System.Windows.Forms.DataGridView dGridTahakuk;
         private MaterialSkin.Controls.MaterialRadioButton rbKurumsalTahakkuk;
@@ -508,7 +586,11 @@
         private MaterialSkin.Controls.MaterialRadioButton rbBireyselSiebel;
         private System.Windows.Forms.ComboBox cbKurumXDSL;
         private System.Windows.Forms.ComboBox cbAltUrun;
-        private System.Windows.Forms.Label label1;
+        private MaterialSkin.Controls.MaterialRadioButton rbToptan;
+        private MaterialSkin.Controls.MaterialRadioButton rbSoho;
+        private System.Windows.Forms.Label labelBekle;
+        private MaterialSkin.Controls.MaterialRadioButton rbKurumsalTelaura;
+        private MaterialSkin.Controls.MaterialRadioButton rbBireyselTelaura;
     }
 }
 
